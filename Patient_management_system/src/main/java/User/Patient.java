@@ -42,7 +42,8 @@ public class Patient extends Users{
     }
 
     public void setFirst_Name(String first_Name) {
-        this.first_Name = first_Name;
+        if(first_Name != null && !first_Name.isEmpty()) {
+        this.first_Name = first_Name;}
     }
 
     public String getLast_Name() {
@@ -50,7 +51,8 @@ public class Patient extends Users{
     }
 
     public void setLast_Name(String last_Name) {
-        this.last_Name = last_Name;
+        if(last_Name != null && !last_Name.isEmpty()) {
+        this.last_Name = last_Name;}
     }
 
     public String getPhone_Number() {
@@ -58,7 +60,8 @@ public class Patient extends Users{
     }
 
     public void setPhone_Number(String phone_Number) {
-        this.phone_Number = phone_Number;
+        if(phone_Number != null && !phone_Number.isEmpty()) {
+        this.phone_Number = phone_Number;}
     }
 
     public String getAddress() {
@@ -66,7 +69,8 @@ public class Patient extends Users{
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        if(address != null && !address.isEmpty()) {
+        this.address = address;}
     }
 
     public String getPostcode() {
@@ -74,7 +78,8 @@ public class Patient extends Users{
     }
 
     public void setPostcode(String postcode) {
-        this.postcode = postcode;
+        if(postcode != null && !postcode.isEmpty()) {
+        this.postcode = postcode;}
     }
 
     public String getDate_Of_Birth() {
@@ -82,7 +87,8 @@ public class Patient extends Users{
     }
 
     public void setDate_Of_Birth(String date_Of_Birth) {
-        this.date_Of_Birth = date_Of_Birth;
+        if(date_Of_Birth != null && !date_Of_Birth.isEmpty()) {
+        this.date_Of_Birth = date_Of_Birth;}
     }
 
     public int getAge() {
@@ -90,7 +96,8 @@ public class Patient extends Users{
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if(age >= this.age && age >= 0) {
+        this.age = age;}
     }
 
     public String getSex() {
@@ -98,7 +105,8 @@ public class Patient extends Users{
     }
 
     public void setSex(String sex) {
-        this.sex = sex;
+        if(sex != null && !sex.isEmpty()) {
+        this.sex = sex;}
     }
 
     public String getNhs_Number() {
@@ -106,7 +114,8 @@ public class Patient extends Users{
     }
 
     public void setNhs_Number(String nhs_Number) {
-        this.nhs_Number = nhs_Number;
+        if(nhs_Number != null && !nhs_Number.isEmpty()) {
+        this.nhs_Number = nhs_Number;}
     }
     
     

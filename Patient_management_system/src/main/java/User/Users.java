@@ -21,7 +21,8 @@ public class Users {
     }
 
     public void setUserId(String userId) {
-        this.userId = userId;
+        if(userId != null && !userId.isEmpty()) {
+        this.userId = userId;}
     }
 
     public String getPassword() {
@@ -29,7 +30,8 @@ public class Users {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if(password != null && !password.isEmpty()) {
+        this.password = password;}
     }
     
     
