@@ -60,13 +60,52 @@ public class getData {
         } 
     }
     
-    public void addpatient(Users patient)
+    
+    
+    public void addDoctor(Users doctor)
         {
-        patients.add(patient);
+        doctors.add(doctor);
         }
        
-        public void removepatient(Users patient)
+        public void removedoctor(Users doctor)
         {
-        patients.remove(patient);
+        doctors.remove(doctor);
+        }
+       public void readDoctors(ArrayList<Doctor>doctors)throws Exception
+    {
+        File file = new File("C:\\Users\\test.txt");
+        
+        BufferedReader br = new BufferedReader(new FileReader(file));
+          
+        String userId;
+        String password;
+        String first_Name;
+        String last_Name;        
+        
+        
+        while ((br.readLine())!=null) {
+            userId = br.readLine();
+            password = br.readLine();
+            first_Name = br.readLine();
+            last_Name = br.readLine();       
+            
+            
+            Users newdoctor = new Doctor(userId, password, first_Name, last_Name); 
+            
+            adddoctor(newdoctor);
+            
+            doctors = new ArrayList<Doctor>();
+        } 
+    }
+    
+    public void adddoctor(Users doctor)
+        {
+        doctors.add(doctor);
+        }
+       
+        public void removedoctor(Users doctor)
+        {
+        doctors.remove(doctor);
         }
 }
+
