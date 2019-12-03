@@ -18,7 +18,7 @@ public class getData {
     
     private ArrayList<Users>patients;
     private ArrayList <Users>administrators;
-    private ArrayList<Users>secretary;
+    private ArrayList<Users>secretarys;
     private ArrayList<Users>doctors;
     
     public void readPatients(ArrayList<Patient>patients)throws Exception
@@ -54,7 +54,7 @@ public class getData {
             
             Users newpatient = new Patient(userId, password, first_Name, last_Name, phone_Number, address, postcode, date_Of_Birth, age, sex, nhs_Number); 
             
-            addpatient(newpatient);
+            addPatient(newpatient);
             
             patients = new ArrayList<Patient>();
         } 
@@ -62,15 +62,21 @@ public class getData {
     
     
     
-    public void addDoctor(Users doctor)
+    public void addPatient(Users patient)
         {
-        doctors.add(doctor);
+        patients.add(patient);
         }
        
-        public void removedoctor(Users doctor)
+        public void removepatient(Users patient)
         {
-        doctors.remove(doctor);
-        }
+        patients.remove(patient);
+        }       
+        
+        
+        
+        
+        
+       
        public void readDoctors(ArrayList<Doctor>doctors)throws Exception
     {
         File file = new File("C:\\Users\\test.txt");
@@ -103,9 +109,93 @@ public class getData {
         doctors.add(doctor);
         }
        
-        public void removedoctor(Users doctor)
+        public void removeDoctor(Users doctor)
         {
         doctors.remove(doctor);
         }
+        
+        
+        
+        
+        
+        
+        public void readAdministrator(ArrayList<Administrator>Administrators)throws Exception
+    {
+        File file = new File("C:\\Users\\test.txt");
+        
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        
+        String userId;
+        String password;       
+              
+        
+        
+        while ((br.readLine())!=null) {
+            userId = br.readLine();
+            password = br.readLine();             
+            
+            
+            Users newAdministrator = new Administrator(userId, password); 
+            
+            addadministrator(newAdministrator);
+            
+            Administrators = new ArrayList<Administrator>();
+        } 
+    }
+    
+    public void addadministrator(Users administrator)
+        {
+        administrators.add(administrator);
+        }
+       
+        public void removeAdministrator(Users administrator)
+        {
+        administrators.remove(administrator);
+        }
+        
+        
+        
+        
+        
+        public void readSecretary(ArrayList<Secretary>Secretarys)throws Exception
+    {
+        File file = new File("C:\\Users\\test.txt");
+        
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        
+        String userId;
+        String password;       
+              
+        
+        
+        while ((br.readLine())!=null) {
+            userId = br.readLine();
+            password = br.readLine();             
+            
+            
+            Users newSecretary = new Secretary(userId, password); 
+            
+            addadministrator(newSecretary);
+            
+            Secretarys = new ArrayList<Secretary>();
+        } 
+    }
+    
+    public void addsecretary(Users secretary)
+        {
+        secretarys.add(secretary);
+        }
+       
+        public void removeSecretary(Users secretary)
+        {
+        secretarys.remove(secretary);
+        }
+        
+        
+
+
 }
+
+
+
 
